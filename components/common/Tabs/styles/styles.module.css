@@ -1,0 +1,28 @@
+.wrap {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 35px 0;
+
+    display: flex;
+}
+
+.tab {
+    font-size: 15px;
+    color: #908585;
+    font-family: 'Fritz';
+    text-transform: uppercase;
+    padding: 20px 35px;
+    position: relative;
+    bottom: -2px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.active {
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    background: #0d0c0a;
+}

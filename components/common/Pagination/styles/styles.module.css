@@ -1,0 +1,53 @@
+.wrap {
+    width: 100%;
+    padding: 30px 0 70px 0;
+
+    position: relative;
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+}
+
+.arrow {
+    padding: 0!important;
+}
+
+.arrow:hover img {
+    filter: brightness(1.5);
+}
+
+.buttons {
+    display: flex;
+}
+
+.button {
+    outline: none;
+    border: 0;
+
+    vertical-align: middle;
+    font-size: 18px;
+    font-family: "Fritz";
+    text-decoration: underline;
+    color: #fff;
+
+    background: transparent;
+
+    cursor: pointer;
+    padding: 10px;
+}
+
+.active {
+    color: #ffb432;
+}
+
+.separator {
+    display: flex;
+    align-items: flex-end;
+
+    font-size: 18px;
+    font-family: "Fritz";
+
+    padding: 11px;
+    color: #fff;
+}

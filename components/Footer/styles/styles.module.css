@@ -1,0 +1,70 @@
+.footer {
+    background: #050404;
+    padding: 60px 0;
+}
+
+.menu {
+    position: relative;
+    margin-bottom: 100px;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menuBlock {
+    flex: 0 0 25%;
+    max-width: 25%;
+    position: relative;
+}
+
+.menuBlock h4 {
+    color: #eadcd2;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-bottom: 20px;
+    font-family: 'Fritz';
+}
+
+.menuLink {
+    position: relative;
+    display: inline-block;
+    color: #696868;
+    font-size: 14px;
+    padding: 10px 0px;
+    background: url('../assets/list-hover.png') left -20px center no-repeat;
+}
+
+.menuLink:hover {
+    background: url('../assets/list-hover.png') left 0px center no-repeat;
+    padding: 10px 0px 10px 16px;
+    color: #ffb432;
+}
+
+.info {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.payments {
+    opacity: 0.4;
+}
+
+.copyright {
+    color: #fff;
+}
+
+.copyright a {
+    margin: 0px 15px;
+}
+
+.copyright span {
+    margin-left: 25px;
+    font-size: 14px;
+    opacity: 0.4;
+}

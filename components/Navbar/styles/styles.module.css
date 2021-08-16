@@ -1,0 +1,160 @@
+.navbarWrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transition: 0.3s;
+    z-index: 12;
+}
+
+.navbar {
+    width: 100%;
+    max-width: 1150px;
+    position: relative;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.navBarScrolled {
+    background: rgba(0,0,0,0.9);
+}
+
+.navbar .navLink {
+    transition: all 0.3s ease;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navLink {
+    display: flex;
+    align-items: center;
+    height: 90px;
+    padding: 0px 20px;
+    font-size: 15px;
+}
+
+.navbar .navLink:hover {
+    color: #ffb432;
+}
+
+.navbarBrand {
+    transition: .7s;
+}
+
+.navbarBrand:hover {
+    filter: brightness(1.5);
+}
+
+.navWrap {
+    display: flex;
+    align-items: center;
+    height: 90px;
+}
+
+.navItem {
+    padding: 0px 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.navLink:hover .dropdownTitle::after {
+    content: "";
+    opacity: 1;
+}
+
+.navDropdown {
+    display: none;
+    height: 0;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+    padding: 20px 0px 70px 0px;
+    animation: dropdown 0.1s linear alternate;
+    transition: .3s;
+}
+
+.dropdownActive {
+    display: block;
+    height: auto;
+}
+
+.dropdownTitle::after {
+    content: "";
+    position: absolute;
+    background: url('../assets/row-icon.png') no-repeat;
+    width: 12px;
+    height: 8px;
+    right: 15px;
+    top: 50%;
+    margin-top: -2px;
+    opacity: 0.3;
+    transition: 0.3s;
+}
+
+.navSubItem {
+    display: block;
+    text-align: center;
+}
+
+.navDropdown li a {
+    display: block;
+    height: auto;
+    padding: 20px 3px;
+}
+
+.userBlock {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    color: #ffb432;
+    transition: .3s;
+}
+
+.userBlock:hover {
+    color: #fff;
+}
+
+.userAuth {
+    color: #ffb432;
+    font-size: 15px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.userAuthImage {
+    margin-left: 20px;
+    border-radius: 50%;
+    height: 38px;
+    width: 38px;
+    padding: 4px;
+    transition: 0.3s;
+    border: 1px solid rgba(229, 221, 214, 0.25);
+}
+
+.userAuth:hover .userAuthImage {
+    border: 1px solid #ffb432;
+}
+
+@keyframes dropdown {
+    0% {
+        padding-top: 0;
+        height: 0;
+    }
+    100% {
+        padding-top: 20px;
+        height: auto;
+    }
+}

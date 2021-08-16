@@ -1,0 +1,130 @@
+.gameCenterTitle {
+    text-transform: uppercase;
+    font-family: 'Fritz';
+    font-size: 36px;
+    letter-spacing: 5px;
+    color: #fff;
+    font-weight: normal;
+    margin-bottom: 50px;
+}
+
+.gameCenterTitle span {
+    margin-left: 7px;
+    color: #908585;
+}
+
+.gcContainer {
+    border: 1px solid #403f3d;
+    width: 100%;
+    transition: 0.3s;
+    margin-bottom: 100px;
+    flex-wrap: nowrap;
+
+    display: flex;
+}
+
+.gcContainer:hover .gcBlock {
+    width: 18%;
+}
+
+.gcContainer:hover .gcBlock:hover {
+    width: 28%;
+}
+
+.gcContainer:hover .gcBlock:hover p {
+    color: #fff;
+}
+
+.gcContainer:hover .gcBlock:hover .goBtn {
+    padding: 5px 30px 5px 10px;
+    color: #000;
+    background-color: #ffb432;
+}
+
+.gcContainer:hover .gcBlock:hover .goBtn:after {
+    filter: grayscale(100%) brightness(10%);
+    right: 10px;
+}
+
+.gcContainer:hover .gcBlock:hover:after {
+    opacity: 1;
+}
+
+.gcContainer:hover .gcBlock:hover .gcIcon {
+    opacity: 1;
+}
+
+.gcBlock {
+    border-right: 1px solid #403f3d;
+    width: 20%;
+    padding: 40px 10px 40px 40px;
+    transition: 0.3s;
+    position: relative;
+    color: #fff;
+}
+
+.gcBlock:last-child {
+    border-right: none;
+}
+
+.gcBlock::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: url('../assets/game-bg.jpg') center no-repeat;
+    background-size: cover;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.gcBlock h3 {
+    font-family: 'Fritz';
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 7px;
+    position: relative;
+    z-index: 1;
+}
+
+.gcBlock p {
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: #7a7a79;
+    position: relative;
+    z-index: 1;
+}
+
+.goBtn {
+    display: inline-block;
+    color: #ffb432;
+    font-size: 14px;
+    text-shadow: 0px 0px 10px #ff5e0f;
+    position: relative;
+    z-index: 1;
+    padding: 5px 0px 5px 0px;
+}
+
+.goBtn::after {
+    content: '';
+    background: url('../assets/link-icon.png') left -8px center no-repeat;
+    width: 8px;
+    height: 12px;
+    position: absolute;
+    right: -14px;
+    top: 50%;
+    margin-top: -6px;
+}
+
+.gcIcon {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    right: 30px;
+    top: 50%;
+    margin-top: -50px;
+    opacity: 0;
+    transition: 0.3s;
+}

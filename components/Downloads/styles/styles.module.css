@@ -1,0 +1,72 @@
+.wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.dBlockTitle {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.dBlockDesc {
+    margin-bottom: 25px;
+    color: #696868;
+}
+
+.sources, .unique {
+    width: calc(50% - 20px);
+    background: #1b1918;
+    text-align: center;
+    padding: 40px 60px;
+}
+
+.dLinks {
+    border: 1px solid #323030;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.dLinks:last-child {
+    border-right: 0;
+}
+
+.dLink {
+    width: 33.33%;
+    display: block;
+    padding: 20px 0px;
+    border-right: 1px solid #323030;
+}
+
+.dLink p {
+    margin-bottom: 0px;
+    color: #867d86;
+    font-size: 11px;
+    transition: 0.3s;
+}
+
+.dLink:hover p {
+    color: #fff;
+}
+
+.dLink:hover {
+    background-color: #161412;
+}
+
+.dLink.google:hover {
+    filter: drop-shadow(0px 0px 20px rgba(255, 210, 68, 0.5));
+}
+
+.dLink.torrent:hover {
+    filter: drop-shadow(0px 0px 20px rgba(118, 184, 62, 0.5));
+}
+
+.dLink.dropbox:hover {
+    filter: drop-shadow(0px 0px 20px rgba(0, 126, 229, 0.5));
+}

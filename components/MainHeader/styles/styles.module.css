@@ -1,0 +1,362 @@
+.header {
+    height: 870px;
+}
+
+.ray {
+    background: url('../assets/ray.png') no-repeat;
+    width: 419px;
+    height: 419px;
+    position: absolute;
+    left: 33px;
+    top: 206px;
+    animation: ray 14s infinite linear;
+    transform: rotate(0deg);
+    opacity: 0.6;
+}
+
+@keyframes ray {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.rainbow {
+    background: url('../assets/rainbow.png') no-repeat;
+    background-size: 150px 142px;
+    width: 445px;
+    height: 422px;
+    position: absolute;
+    left: 166px;
+    top: 329px;
+    opacity: 0;
+    animation: rainbow 5s infinite linear;
+}
+
+@keyframes rainbow {
+    0% {
+        background: url('../assets/rainbow.png') no-repeat;
+        background-size: 150px 142px;
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        background: url('../assets/rainbow.png') no-repeat;
+        background-size: 445px 422px;
+        opacity: 0;
+        left: 166px;
+        top: 329px;
+    }
+}
+
+.sparks {
+    position: absolute;
+    width: 1200px;
+    left: 50%;
+    margin-left: -600px;
+    bottom: 40px;
+}
+
+.sparks > div {
+    position: absolute;
+}
+
+.spark_1 {
+    background: url('../assets/spark_1.png') no-repeat;
+    width: 764px;
+    height: 313px;
+    right: 0;
+    bottom: -320px;
+    transform: scale(0.6);
+    animation: spark-1 4s linear infinite;
+    animation-delay: 1s;
+}
+
+.spark_2 {
+    background: url('../assets/spark_2.png') no-repeat;
+    width: 179px;
+    height: 335px;
+    right: 230px;
+    bottom: -320px;
+    transform: scale(0.6);
+    animation: spark-1 4s linear infinite;
+    animation-delay: 2s;
+}
+
+.spark_3 {
+    background: url('../assets/spark_3.png') no-repeat;
+    width: 128px;
+    height: 165px;
+    right: 280px;
+    bottom: -140px;
+    transform: scale(0.6);
+    animation: spark-3 4s linear infinite;
+    animation-delay: 2s;
+}
+
+.spark_4 {
+    background: url('../assets/spark_4.png') no-repeat;
+    width: 794px;
+    height: 176px;
+    right: 0;
+    bottom: -180px;
+    transform: scale(0.6);
+    animation: spark-5 4s linear infinite;
+}
+
+.spark_5 {
+    background: url('../assets/spark_4.png') no-repeat;
+    width: 794px;
+    height: 176px;
+    right: 40px;
+    bottom: -180px;
+    transform: scale(0.6);
+    animation: spark-5 4s linear infinite;
+    animation-delay: 2s;
+}
+
+@keyframes spark-1 {
+    0% {
+        bottom: -320px;
+        transform: scale(0.6);
+        opacity: 1;
+    }
+    25% {
+        bottom: -240px;
+        transform: scale(0.7);
+        opacity: 1;
+    }
+    50% {
+        bottom: -160px;
+        transform: scale(0.8);
+        opacity: 1;
+    }
+    75% {
+        bottom: -80px;
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+    100% {
+        bottom: 0px;
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes spark-3 {
+    0% {
+        bottom: -140px;
+        transform: scale(0.6);
+        opacity: 1;
+    }
+    25% {
+        bottom: -80px;
+        transform: scale(0.7);
+        opacity: 1;
+    }
+    50% {
+        bottom: -20px;
+        transform: scale(0.8);
+        opacity: 1;
+    }
+    75% {
+        bottom: 40px;
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+    100% {
+        bottom: 100px;
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes spark-5 {
+    0% {
+        bottom: -180px;
+        transform: scale(0.6);
+        opacity: 1;
+    }
+    25% {
+        bottom: -120px;
+        transform: scale(0.7);
+        opacity: 1;
+    }
+    50% {
+        bottom: -60px;
+        transform: scale(0.8);
+        opacity: 1;
+    }
+    75% {
+        bottom: 0px;
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+    100% {
+        bottom: 60px;
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.logo {
+    position: absolute;
+    top: 285px;
+    left: 100px;
+    z-index: 5;
+}
+
+.logoLink {
+    transition: .5s;
+}
+
+.logoLink:hover {
+    filter: brightness(1.5);
+}
+
+.online {
+    background: url('../assets/online_bg.png') no-repeat;
+    width: 361px;
+    height: 148px;
+    position: absolute;
+    top: 510px;
+    left: 100px;
+    text-align: center;
+    padding-top: 35px;
+    padding-left: 4px;
+}
+
+.online p {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.online span {
+    color: #ffb432;
+    font-size: 36px;
+    font-family: 'Fritz';
+    letter-spacing: 5px;
+    text-shadow: 0px 0px 10px rgb(150 60 0 / 60%);
+}
+
+.flame {
+    width: 400px;
+    height: 450px;
+    position: absolute;
+    left: 820px;
+    top: 160px;
+}
+
+.flame > div {
+    width: 400px;
+    height: 450px;
+    position: absolute;
+    opacity: 0;
+}
+
+.flame_1 {
+    background: url('../assets/flame_1.png') no-repeat;
+    animation: flame_1 3s linear infinite;
+    animation-delay: 0.7s;
+}
+
+.flame_2 {
+    background: url('../assets/flame_2.png') no-repeat;
+    animation: flame_1 3s linear infinite;
+    animation-delay: 1.4s;
+}
+
+.flame_3 {
+    background: url('../assets/flame_3.png') no-repeat;
+    animation: flame_1 3s linear infinite;
+    animation-delay: 2.1s;
+}
+
+.flame_4 {
+    background: url('../assets/flame_4.png') no-repeat;
+    animation: flame_1 3s linear infinite;
+    animation-delay: 2.8s;
+}
+
+.flame_5 {
+    background: url('../assets/flame_5.png') no-repeat;
+    animation: flame_1 3s linear infinite;
+    animation-delay: 3.5s;
+}
+
+@keyframes flame_1 {
+    0% {
+        bottom: 0px;
+        left: 0px;
+        opacity: 0;
+        transform: scale(1);
+    }
+    50% {
+        bottom: 60px;
+        left: 30px;
+        opacity: 1;
+        transform: scale(0.8);
+    }
+    100% {
+        bottom: 120px;
+        left: 60px;
+        opacity: 0;
+        transform: scale(0.6);
+    }
+}
+
+.download {
+    width: 300px;
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+}
+
+.downloadLink {
+    background: url('../assets/download-button.jpg') no-repeat;
+    width: 300px;
+    height: 100px;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    padding-left: 105px;
+    font-size: 20px;
+    text-shadow: 2px 2px 1px rgb(0 0 0 / 20%);
+    letter-spacing: 3px;
+    box-shadow: 0px 0px 30px 1px rgb(90 183 0 / 60%);
+    font-family: "Fritz";
+    transition: .3s ease-in-out;
+}
+
+.downloadLink:hover {
+    filter: brightness(1.3);
+}
+
+.downloadLink span {
+    width: 100%;
+    display: block;
+    margin-top: 7px;
+    opacity: 0.3;
+    font-size: 12px;
+    letter-spacing: 6px;
+}
+
+.preferedFaction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    background: rgba(8, 11, 4, 0.65);
+    padding: 12px 0px;
+
+    color: #6d7068;
+    font-size: 14px;
+}

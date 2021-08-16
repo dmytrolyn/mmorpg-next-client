@@ -1,0 +1,44 @@
+.breadcrumbs {
+    background: rgba(0, 0, 0, 0.9);
+    min-height: 55px;
+    position: relative;
+    top: -55px;
+    margin-bottom: -55px;
+    font-size: 14px;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.list {
+    display: flex;
+}
+
+.inactive {
+    width: min-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inactive::after {
+    content: "";
+    display: block;
+    background: url('../assets/row-icon.png') no-repeat;
+    width: 12px;
+    height: 8px;
+    opacity: 0.3;
+    transform: rotate(-90deg);
+    margin: 0px 20px;
+}
+
+.inactive a {
+    color: #ffb432;
+    text-decoration: underline;
+}
+
+.active a {
+    color: #696868;
+}
