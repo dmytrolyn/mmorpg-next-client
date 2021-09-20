@@ -1,4 +1,6 @@
-import { createStore, applyMiddleware, combineReducers, compose } from "redux"
+import { useMemo } from 'react'
+import { createStore, applyMiddleware, combineReducers } from "redux"
+import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction';
 import createSagaMiddleware from 'redux-saga';
 
 import { rootSaga } from './saga';
@@ -19,20 +21,46 @@ const rootReducer = combineReducers({
     shop
 })
 
-declare global {
-    interface Window {
-        __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
-    }
+let store: any
+
+function initStore(initialState: AppState) {
+    return createStore(
+        rootReducer,
+        initialState,
+        composeWithDevTools(applyMiddleware(sagaMiddleware))
+    )
 }
 
-const middleware = [ sagaMiddleware ];
-const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
+export const initializeStore = (preloadedState: AppState) => {
+    let _store = store ?? initStore(preloadedState)
 
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(...middleware)));
+    // After navigating to a page with an initial Redux state, merge that state
+    // with the current state in the store, and create a new store
+    if (preloadedState && store) {
+        _store = initStore({
+        ...store.getState(),
+        ...preloadedState,
+        })
+        // Reset the current store
+        store = undefined
+    }
 
-sagaMiddleware.run(rootSaga);
+    sagaMiddleware.run(rootSaga);
 
-export default store;
+    // For SSG and SSR always create a new store
+    if (typeof window === 'undefined') return _store
+    // Create the store once in the client
+    if (!store) store = _store
+
+    return _store
+}
+
+function useStore(initialState: AppState) {
+    const store = useMemo(() => initializeStore(initialState), [initialState])
+    return store
+}
+
+export default useStore;
 
 export type AppState = ReturnType<typeof rootReducer>
 export type DispatchType = typeof store.dispatch

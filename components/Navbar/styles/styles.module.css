@@ -158,3 +158,27 @@
         height: auto;
     }
 }
+
+.nickname {
+    position: relative;
+    display: block;
+    padding-right: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 180px;
+    padding-bottom: 2px;
+}
+
+.nickname::after {
+    content: "";
+    position: absolute;
+    background: url('../assets/row-icon.png') no-repeat;
+    width: 12px;
+    height: 8px;
+    right: 0px;
+    top: 50%;
+    margin-top: -3px;
+    opacity: 0.3;
+    transition: 0.3s;
+}

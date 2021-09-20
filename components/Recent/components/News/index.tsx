@@ -1,49 +1,46 @@
-import styles from '../../styles/styles.module.css';
-import Link from 'next/link';
-import { NewsType } from '../../styled/components';
-import * as types from '../../utils/newsTypes';
+import Link from 'next/link'
+import { NewsType } from '../../styled/components'
+import styles from '../../styles/styles.module.css'
 
-const News = () => {
+import * as types from '../../utils/newsTypes'
+import { categoryToIndex, indexToCategory } from '../../utils/newsCategories'
+import { NewsItemSchema } from 'utils/contentTypes'
+
+const News = ({ news }: { news: Array<NewsItemSchema> }) => {
+    const nextEvent = news.find(n => n.Category === categoryToIndex[types.EVENT])
+    const mainNews = nextEvent || news[0]
+
+    const transformDate = (dateString: string) => 
+        new Date(dateString).toLocaleDateString().split('.').slice(0, 2).join('/')
+    
+    const buildMainTitle = (title: string) => title.length > 30 ? `${title.slice(0, 30)}...` : title
+
     return (
         <div className={styles.newsWrap}>
             <h3 className={styles.newsHeader}>News</h3>
-            <Link href="/">
+            {mainNews && <Link href={`/news/${mainNews.RowID}`}>
                 <a className={styles.mainEvent}>
-                    <p>[ Main event ]</p>
-                    <span>Castle defence</span>
+                    <p>[ Last news ]</p>
+                    <span>{buildMainTitle(mainNews.Title)}</span>
                 </a>
-            </Link>
+            </Link>}
             <ul className={styles.newsList}>
-                <li className={styles.newsItem}>
-                    <Link href="/news/1">
-                        <a>
-                            <NewsType type={types.NEWS}>[ {types.NEWS} ]</NewsType>
-                            <h3 className={styles.newsTitle}>New launcher Client 2020</h3>
-                            <span className={styles.newsDate}>10/03</span>
-                        </a>
-                    </Link>
-                    <Link href="/news/1">
-                        <a>
-                            <NewsType type={types.EVENT}>[ {types.EVENT} ]</NewsType>
-                            <h3 className={styles.newsTitle}>New launcher Client 2020</h3>
-                            <span className={styles.newsDate}>10/04</span>
-                        </a>
-                    </Link>
-                    <Link href="/news/1">
-                        <a>
-                            <NewsType type={types.NEWS}>[ {types.NEWS} ]</NewsType>
-                            <h3 className={styles.newsTitle}>New launcher Client 2020</h3>
-                            <span className={styles.newsDate}>10/05</span>
-                        </a>
-                    </Link>
-                    <Link href="/news/1">
-                        <a>
-                            <NewsType type={types.UPDATE}>[ {types.UPDATE} ]</NewsType>
-                            <h3 className={styles.newsTitle}>New launcher Client 2020</h3>
-                            <span className={styles.newsDate}>10/06</span>
-                        </a>
-                    </Link>
-                </li>
+                {news.slice(1, 5).map(item => {
+                    let type = indexToCategory[item.Category]
+
+                    return (
+                        <li key={item.RowID} className={styles.newsItem}>
+                            <Link href={`/news/${item.RowID}`}>
+                                <a>
+                                    <NewsType type={type}>[ {type} ]</NewsType>
+                                    <h3 className={styles.newsTitle}>{item.Title}</h3>
+                                    <span className={styles.newsDate}>{transformDate(item.Date)}</span>
+                                </a>
+                            </Link>
+                        </li>
+                    )
+                }
+                )}
             </ul>
             <Link href="/news/all"><a className={styles.moreNews}><div>[ More news ]</div></a></Link>
         </div>
